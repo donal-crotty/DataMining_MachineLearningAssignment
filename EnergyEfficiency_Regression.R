@@ -1,6 +1,8 @@
 engy_eff <- read.csv("data/regression/EnergyEfficiency.csv", stringsAsFactors = FALSE)
 #add engy_eff to a dataframe
 values <- data.frame(engy_eff)
+pairs(engy_eff)
+cor(engy_eff)
 
 ############## engy_eff Exploration ################
 
