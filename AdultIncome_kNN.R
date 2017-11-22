@@ -33,12 +33,12 @@ adult_income_n <- as.data.frame(lapply(adult_income[11:13], normalize))
 summary(adult_income_n$Capital_Gain)
 
 # create training and test data
-adult_income_train <- adult_income_n[1:8000, ]
-adult_income_test <- adult_income_n[8001:10000, ]
+adult_income_train <- adult_income_n[1:3000, ]
+adult_income_test <- adult_income_n[3001:3900, ]
 
 # create labels for training and test data
-adult_income_train_labels <- adult_income[1:8000, 1]
-adult_income_test_labels <- adult_income[8001:10000, 1]
+adult_income_train_labels <- adult_income[1:3000, 1]
+adult_income_test_labels <- adult_income[3001:3900, 1]
 ## Step 3: Training a model on the data ----
 library(class)
 adult_income_test_pred <- knn(train = adult_income_train, test =
