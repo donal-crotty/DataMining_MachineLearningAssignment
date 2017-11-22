@@ -5,11 +5,6 @@ str(adult_income)
 adult_income[is.na(adult_income)] <- 0
 # table of Wage
 table(adult_income$Wage)
-# recode Wage as a factor >50K recoded to Yes, <=50k recoded to No
-#There if user makes more than 50k, it is Yes, else No
-#adult_income$Wage <- factor(adult_income$Wage,
- #                        levels = c(">50K", "<=50K"),
-  #                       labels = c("Yes", "No"))
 
 # table or proportions with more informative labels
 round(prop.table(table(adult_income$Wage)) * 100, digits = 1)
