@@ -1,6 +1,8 @@
 engy_eff <- read.csv("data/regression/EnergyEfficiency.csv", stringsAsFactors = FALSE)
 values <- data.frame(engy_eff)
 cor(engy_eff)
+var(engy_eff)
+cov(engy_eff)
 pairs(engy_eff)
 
 #disable package warnings for screenshotting purposes
@@ -14,13 +16,13 @@ plot(engy_eff$HeatingLoad, engy_eff$CoolingLoad, xlab="Heating Load", ylab="Cool
 plot(engy_eff$RelativeCompactness, engy_eff$SurfaceArea, xlab="Relative Compactness", ylab="Surface Area")
 
 #Summarize each predicted attribute
-#attach(values)
-summary(HeatingLoad)
-summary(CoolingLoad)
+attach(values)
+summary(engy_eff$HeatingLoad)
+summary(engy_eff$CoolingLoad)
 
 #look at the two predicted characteristics
-table(HeatingLoad)
-table(CoolingLoad)
+table(engy_eff$HeatingLoad)
+table(engy_eff$CoolingLoad)
 
 set.seed(1)
 
@@ -40,6 +42,7 @@ predict(regression.model, newdata)
 summary(regression.model)$r.squared
 predict(regression.model, newdata, interval="confidence")
 predict(regression.model, newdata, interval="predict")
+plot(regression.model, which = 1)
 
 ########## Create Prediction Model - Cooling Load #############
 

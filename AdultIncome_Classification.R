@@ -7,7 +7,8 @@ library(gmodels)
 adult_income <- read.csv("data/classification/Adult_Income.csv", stringsAsFactors = FALSE)
 head(adult_income)
 
-
+table(adult_income$Wage)
+table(adult_income$Age)
 
 #create a randomly shuffled sample for training and test data
 set.seed(1)
