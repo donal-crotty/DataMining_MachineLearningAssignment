@@ -14,8 +14,8 @@ table(adult_income$Age)
 set.seed(1)
 
 adult_income_rand <- adult_income[order(runif(32562)), ]
-adult_income_train <- adult_income_rand[1:8000, ]
-adult_income_test <- adult_income_rand[8001:10000, ]
+adult_income_train <- adult_income_rand[1:4000, ]
+adult_income_test <- adult_income_rand[4001:4400, ]
 
 #Train
 adult_income_model <- C5.0(as.factor(Wage) ~ ., data = adult_income_train)
